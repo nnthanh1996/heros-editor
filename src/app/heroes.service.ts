@@ -1,8 +1,17 @@
 import { Injectable } from '@angular/core';
-import {MessageService} from './message.service';
+import { MessageService } from './message.service';
+import { HEROES } from '../assets/heroes';
+import { Hero } from '../assets/hero';
+
 @Injectable()
 export class HeroesService {
 
-  constructor(private messageService : MessageService) { }
+  constructor(public messageService : MessageService) { }
+
+  getHeroes(): Observable<Hero[]> {
+    this.messageService.add('Hero Service: fetched heroes');
+
+    return of(HEROES);
+  }
 
 }
