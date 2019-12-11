@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingsModule } from "./app-routings/app-routings.module";
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -10,7 +12,7 @@ import { HeroesMessagesComponent } from './heroes-messages/heroes-messages.compo
 import { MessageService } from './message.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule, RouterModule, AppRoutingsModule ],
   declarations: [ AppComponent, HeroesComponent, HeroesDetailsComponent, HeroesMessagesComponent ],
   bootstrap:    [ AppComponent ],
   providers: [HeroesService, MessageService]
