@@ -1,3 +1,15 @@
 .selected {
   text-decoration: underline;
 }
+
+ul {
+  list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+  width: 30%;
+  margin-left: 10px;
+}

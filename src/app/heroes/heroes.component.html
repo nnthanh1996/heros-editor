@@ -1,7 +1,27 @@
-<h2>My Heroes</h2>
 <ul>
   <li *ngFor="let hero of heroes " (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <span>{{hero.name}}</span>
+    <div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{hero.name}}
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+</div>
   </li>
 </ul>
 <app-heroes-details [hero]="selectedHero">

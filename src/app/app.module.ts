@@ -10,10 +10,11 @@ import { HeroesDetailsComponent } from './heroes-details/heroes-details.componen
 import { HeroesService } from './heroes.service';
 import { HeroesMessagesComponent } from './heroes-messages/heroes-messages.component';
 import { MessageService } from './message.service';
+import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule, AppRoutingsModule ],
-  declarations: [ AppComponent, HeroesComponent, HeroesDetailsComponent, HeroesMessagesComponent ],
+  declarations: [ AppComponent, HeroesComponent, HeroesDetailsComponent, HeroesMessagesComponent, AppDashboardComponent ],
   bootstrap:    [ AppComponent ],
   providers: [HeroesService, MessageService]
 })
