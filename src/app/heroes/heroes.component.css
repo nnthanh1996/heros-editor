@@ -1,5 +1,6 @@
 .selected {
-  text-decoration: underline;
+  background-color: hsl(171, 100%, 41%);
+  color: #fff;
 }
 
 ul {
