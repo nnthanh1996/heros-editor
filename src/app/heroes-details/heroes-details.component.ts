@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Hero} from '../../assets/hero';
 import { HeroesService } from "../heroes.service";
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-heroes-details',
   templateUrl: './heroes-details.component.html',
@@ -9,17 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeroesDetailsComponent implements OnInit {
   hero : Hero;
-  id: string;
-  constructor(private heroService: HeroesService, private route: ActivatedRoute) { }
+  constructor(private heroService: HeroesService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
   }
 
   getHeroes(): void {
-    let params = this.route.paramMap.subscribe(params => {
-      this.id = params.get('id');
-    })
-    this.heroService.getHeroes().subscribe(heroes => this.hero = heroes[this.id]);
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.heroService.getHero(id).subscribe(hero => this.hero = hero);
+
   }
 
 }
