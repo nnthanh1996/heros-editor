@@ -1,10 +1,10 @@
 <ul>
-  <li *ngFor="let hero of heroes " (click)="onSelect(hero)">
+  <li *ngFor="let hero of heroes ">
     <div class="card">
   <header class="card-header">
-    <p class="card-header-title" [class.selected]="hero === selectedHero">
+    <a class="card-header-title" [routerLink]="['detail',hero.id]">
       {{hero.name}}
-    </p>
+    </a>
   </header>
   <div class="card-content">
     <div class="content">
@@ -16,6 +16,3 @@
 </div>
   </li>
 </ul>
-<app-heroes-details [hero]="selectedHero">
-
-</app-heroes-details>
