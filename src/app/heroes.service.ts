@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable()
 export class HeroesService {
 
-  private heroesUrl = 'api/heroes-test';
+  private heroesUrl = 'api/heroes';
 
   constructor(public messageService : MessageService, private http : HttpClient) { }
 
@@ -23,6 +23,7 @@ export class HeroesService {
 
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl).pipe(
+        tap(_ => this.log('Fetching heroes...')),
         catchError(this.handleError<Hero[]>('getHeroes',[]))
     );
   }
