@@ -14,7 +14,11 @@ export class HeroesService {
   constructor(public messageService : MessageService, private http : HttpClient) { }
 
   private handleError<T>(operation = 'operation', result ? : T) {
-    return (error: any)
+    return (error: any) : Observable<T> => {
+      console.log(error);
+      this.log(`${operation} failed: ${error.message}`);
+      return of(result  T);
+    }
   }
 
   getHeroes(): Observable<Hero[]> {
