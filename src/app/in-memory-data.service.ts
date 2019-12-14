@@ -1,24 +1,32 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-import { AppRoutingsModule } from "./app-routings/app-routings.module";
+import { Injectable } from '@angular/core';
+import { Hero } from '../assets/hero';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroesDetailsComponent } from './heroes-details/heroes-details.component';
-import { HeroesService } from './heroes.service';
-import { HeroesMessagesComponent } from './heroes-messages/heroes-messages.component';
-import { MessageService } from './message.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
-
-@NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule, AppRoutingsModule, HttpClientModule ],
-  declarations: [ AppComponent, HeroesComponent, HeroesDetailsComponent, HeroesMessagesComponent, DashboardComponent ],
-  bootstrap:    [ AppComponent ],
-  providers: [HeroesService, MessageService, InMemoryDataService]
+@Injectable({
+  providedIn: 'root'
 })
-export class AppModule { }
+
+export class InMemoryDataService implements InMemoryDbService {
+
+  constructor() { }
+
+  createDb() {
+
+    const heroes = [
+      { id: 11, name: 'Dr Nice' },
+      { id: 12, name: 'Narco' },
+      { id: 13, name: 'Bombasto' },
+      { id: 14, name: 'Celeritas' },
+      { id: 15, name: 'Magneta' },
+      { id: 16, name: 'RubberMan' },
+      { id: 17, name: 'Dynama' },
+      { id: 18, name: 'Dr IQ' },
+      { id: 19, name: 'Magma' },
+      { id: 20, name: 'Tornado' }
+    ];
+
+    return {heroes};
+
+  }
+
+}
