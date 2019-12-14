@@ -12,7 +12,7 @@
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start is-primary">
+      <div class="navbar-start">
         <a class="navbar-item" routerLink="/dashboard">
           Dashboard
         </a>
@@ -20,8 +20,13 @@
           Heroes
         </a>
       </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button class="button is-success is-outlined">Add hero</button>
+        </div>
+      </div>
   </div>
 </nav>
-<app-heroes-messages></app-heroes-messages>
+<!-- <app-heroes-messages></app-heroes-messages> -->
 <router-outlet></router-outlet>
 <!-- <app-heroes-messages></app-heroes-messages> -->
