@@ -17,7 +17,7 @@ export class HeroesService {
     return (error: any) : Observable<T> => {
       console.log(error);
       this.log(`${operation} failed: ${error.message}`);
-      return of(result  T);
+      return of(result as T);
     }
   }
 
