@@ -13,16 +13,16 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
 
     const heroes = [
-      { id: 11, name: 'Dr Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
+      { id: 11, name: 'Dr Nice', description: "Lorem ipslum" },
+      { id: 12, name: 'Narco', description: "Lorem ipslum" },
+      { id: 13, name: 'Bombasto', description: "Lorem ipslum" },
+      { id: 14, name: 'Celeritas', description: "Lorem ipslum" },
+      { id: 15, name: 'Magneta', description: "Lorem ipslum" },
+      { id: 16, name: 'RubberMan', description: "Lorem ipslum" },
+      { id: 17, name: 'Dynama', description: "Lorem ipslum" },
+      { id: 18, name: 'Dr IQ', description: "Lorem ipslum" },
+      { id: 19, name: 'Magma', description: "Lorem ipslum" },
+      { id: 20, name: 'Tornado', description: "Lorem ipslum" }
     ];
 
     return {heroes};

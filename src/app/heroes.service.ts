@@ -40,4 +40,13 @@ export class HeroesService {
      );
   }
 
+  updateHero(hero : Hero): Observable<Hero> {
+    return this.http.put(this.heroesUrl, hero, {
+      headers : new HttpHeaders({'Content-Type': 'application/json'})
+    }).pipe(
+      tap(_ => this.log(`Update hero id = ${hero.id}`)),
+      catchError(this.handleError<any>(`Update herro failed at id = ${hero.id}`))
+    );
+  }
+
 }
