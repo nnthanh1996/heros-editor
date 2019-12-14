@@ -4,6 +4,7 @@ import { HEROES } from '../assets/heroes';
 import { Hero } from '../assets/hero';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class HeroesService {
@@ -12,8 +13,14 @@ export class HeroesService {
 
   constructor(public messageService : MessageService, private http : HttpClient) { }
 
+  private handleError<T>(operation = 'operation', result ? : T) {
+    return (error: any)
+  }
+
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl);
+    return this.http.get<Hero[]>(this.heroesUrl).pipe(
+        catchError(this.handleError<Hero[]>('getHeroes',[]))
+    );
   }
 
   private log(message: string) {
