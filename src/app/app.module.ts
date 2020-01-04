@@ -14,12 +14,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { ReRegisterFormComponent } from './re-register-form/re-register-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule, AppRoutingsModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
+  imports:      [ BrowserModule, FormsModule, RouterModule, AppRoutingsModule, HttpClientModule, ReactiveFormsModule, HttpClientInMemoryWebApiModule.forRoot(
     InMemoryDataService, { dataEncapsulation: false}
   ) ],
-  declarations: [ AppComponent, HeroesComponent, HeroesDetailsComponent, HeroesMessagesComponent, DashboardComponent ],
+  declarations: [ AppComponent, HeroesComponent, HeroesDetailsComponent, HeroesMessagesComponent, DashboardComponent, ReRegisterFormComponent ],
   bootstrap:    [ AppComponent ],
   providers: [HeroesService, MessageService, InMemoryDataService]
 })

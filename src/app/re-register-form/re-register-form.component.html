@@ -1,0 +1,51 @@
+
+<form [formGroup]="nameGroup" (ngSubmit)="onNameSubmit()">
+  <div class="field">
+    <label class="label">First name</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Text input" [formControlName]="firstName">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Last name</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Text input" [formControlName]="lastName">
+    </div>
+  </div>
+  <button type="submit" [disabled]="!nameGroup.valid">Save</button>
+</form>
+
+<div class="field">
+  <label class="label">Address</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input" [formControl]="address">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Street line</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input" [formControl]="streetLine">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">City</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input" [formControl]="city">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Country</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input" [formControl]="country">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Post</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input" [formControl]="postcode">
+  </div>
+</div>
